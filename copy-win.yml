@@ -1,0 +1,14 @@
+- name: Copy win-x64.zip to Windows
+  hosts: windows
+  gather_facts: no
+  tasks:
+    - name: Copy win-x64.zip to C:\test\win-x64.zip
+      win_copy:
+        src: ./win-x64.zip
+        dest: C:\test\win-x64.zip
+
+    - name: Unzip C:\test\win-x64.zip to C:\test\win-x64
+      win_unzip:
+        src: C:\test\win-x64.zip
+        dest: C:\test\win-x64
+        removes: C:\test\win-x64.zip

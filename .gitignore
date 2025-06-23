@@ -1,0 +1,84 @@
+# Ansible
+*.retry
+
+# Python Virtual Environment
+venv/
+env/
+ENV/
+.env
+.venv
+env.bak/
+venv.bak/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.python-version
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Large files
+*.zip
+*.tar.gz
+*.tar.bz2
+*.rar
+*.7z
+*.iso
+
+# Secrets and credentials
+vault.yml
+vault_pass.txt
+*vault*
+*.vault
+*.pem
+*.key
+*.pub
+
+# Windows-specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS-specific
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editor/IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Inventory with sensitive information
+inventory.ini 
