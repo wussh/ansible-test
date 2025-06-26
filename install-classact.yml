@@ -1,0 +1,34 @@
+- name: Copy and Install ClassAct Dezastru Command
+  hosts: windows
+  gather_facts: no
+  tasks:
+    - name: Ensure C:\ClassAct directory exists
+      win_file:
+        path: C:\ClassAct
+        state: directory
+
+    - name: Copy ClassAct Dezastru Command.exe to C:\ClassAct
+      win_copy:
+        src: ./ClassAct Dezastru Command.exe
+        dest: C:\ClassAct\ClassAct Dezastru Command.exe
+
+    - name: Copy ClassAct Dezastru Command-1.bin to C:\ClassAct
+      win_copy:
+        src: ./ClassAct Dezastru Command-1.bin
+        dest: C:\ClassAct\ClassAct Dezastru Command-1.bin
+
+    - name: Copy ClassAct Dezastru Command-2.bin to C:\ClassAct
+      win_copy:
+        src: ./ClassAct Dezastru Command-2.bin
+        dest: C:\ClassAct\ClassAct Dezastru Command-2.bin
+
+    - name: Copy ClassAct Dezastru Command-3.bin to C:\ClassAct
+      win_copy:
+        src: ./ClassAct Dezastru Command-3.bin
+        dest: C:\ClassAct\ClassAct Dezastru Command-3.bin
+
+    - name: Run ClassAct Dezastru Command installer silently
+      win_command: >
+        "C:\ClassAct\ClassAct Dezastru Command.exe" /VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP- /DIR="C:\ClassAct" /LOG="install.log"
+      args:
+        chdir: C:\ClassAct
